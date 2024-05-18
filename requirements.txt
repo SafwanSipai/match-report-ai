@@ -3,7 +3,7 @@ protobuf
 python-dotenv
 Requests
 selenium
-streamlit
+streamlit==1.4.0
 webdriver_manager
 google-generativeai
 seleniumbase
