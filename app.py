@@ -11,7 +11,7 @@ st.title("Match Report AI :soccer:")
 st.write("""
     Get an AI generated match report of any football match with just a few clicks!        
 """)
-st.divider()
+st.write('---')
 
 url_pattern = re.compile(r"^https://www\.fotmob\.com/matches/.+$")
 
