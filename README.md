@@ -1,2 +1,2 @@
-# match-report-ai
-Generate match reports for football matches using AI
+# Match Report AI
+Generate match reports for football matches using AI!
