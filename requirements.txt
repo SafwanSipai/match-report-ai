@@ -6,3 +6,4 @@ selenium
 streamlit
 webdriver_manager
 google-generativeai
+seleniumbase
