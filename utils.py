@@ -2,13 +2,18 @@ import re
 from bs4 import BeautifulSoup
 import requests
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver import FirefoxOptions
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import os
+import sys
 import google.generativeai as genai
 from dotenv import load_dotenv
 
+@st.experimental_singleton
+def installff():
+  os.system('sbase install geckodriver')
+  os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
 
 def get_match_data(url, driver):
     driver.get(url + ":tab=stats")
@@ -101,9 +106,8 @@ def model_inference(model, input):
 
 
 def load_driver():
-    options = Options()
+    _ = installff()
+    options = FirefoxOptions()
     options.add_argument("--headless")
-    options.add_argument("--disable-gpu")
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(options=options, service=service)
+    driver = webdriver.Firefox(options=options)
     return driver
