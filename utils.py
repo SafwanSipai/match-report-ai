@@ -9,6 +9,7 @@ import os
 import sys
 import google.generativeai as genai
 from dotenv import load_dotenv
+import streamlit as st
 
 @st.experimental_singleton
 def installff():
